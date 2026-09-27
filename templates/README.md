@@ -12,5 +12,8 @@ Templates reais de preenchimento para os entregáveis das skills do PM OS. Cada 
 | [stakeholder-update-template.md](stakeholder-update-template.md) | [`stakeholder-update`](../skills/stakeholder-update/SKILL.md) |
 | [sprint-plan-template.md](sprint-plan-template.md) | [`sprint-planning`](../skills/sprint-planning/SKILL.md) |
 | [brainstorming-capture-template.md](brainstorming-capture-template.md) | [`product-brainstorming`](../skills/product-brainstorming/SKILL.md) |
+| [experiment-design-template.md](experiment-design-template.md) | [`design-experiment`](../skills/design-experiment/SKILL.md) |
+| [external-dependency-template.md](external-dependency-template.md) | [`manage-external-dependency`](../skills/manage-external-dependency/SKILL.md) |
+| [unit-economics-template.md](unit-economics-template.md) | [`pricing-unit-economics`](../skills/pricing-unit-economics/SKILL.md) |
 
 Cada template usa `[placeholder]` ou uma instrução curta em itálico indicando o que colocar naquele campo. Seções marcadas com regras específicas da skill (como a etiqueta de proveniência `medido`/`meta`/`estimativa`/`a confirmar`) mantêm essa regra visível no próprio template.

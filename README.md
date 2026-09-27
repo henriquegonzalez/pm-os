@@ -13,20 +13,23 @@ pm-os/
 ├── .claude-plugin/
 │   └── plugin.json
 ├── skills/
-│   ├── write-spec/              # escrever PRD/spec com escopo defensável
-│   ├── roadmap-update/          # atualizar e repriorizar roadmap sob incerteza
-│   ├── metrics-review/          # revisão de métricas com proveniência clara do número
-│   ├── competitive-brief/       # benchmark competitivo estruturado
-│   ├── synthesize-research/     # sintetizar pesquisa qualitativa em achados acionáveis
-│   ├── stakeholder-update/      # comunicação de status por audiência
-│   ├── sprint-planning/         # planejamento de sprint com capacidade realista
-│   └── product-brainstorming/   # parceiro de pensamento pra explorar problema/solução
-└── templates/                   # em construção — ver nota abaixo
+│   ├── write-spec/                  # escrever PRD/spec com escopo defensável
+│   ├── roadmap-update/              # atualizar e repriorizar roadmap sob incerteza
+│   ├── design-experiment/           # desenhar a medição antes de ligar o experimento
+│   ├── metrics-review/              # revisão de métricas com proveniência clara do número
+│   ├── pricing-unit-economics/      # se o benefício se sustenta financeiramente
+│   ├── competitive-brief/           # benchmark competitivo estruturado
+│   ├── synthesize-research/         # sintetizar pesquisa qualitativa em achados acionáveis
+│   ├── manage-external-dependency/  # dependência de parceiro como escopo, não como risco
+│   ├── stakeholder-update/          # comunicação de status por audiência
+│   ├── sprint-planning/             # planejamento de sprint com capacidade realista
+│   └── product-brainstorming/       # parceiro de pensamento pra explorar problema/solução
+└── templates/                       # um template de preenchimento por skill
 ```
 
 Cada pasta em `skills/` tem um `SKILL.md`: instruções que ensinam um LLM a executar aquele tipo de trabalho do jeito que eu executo.
 
-**`templates/` ainda está vazio.** Vou subir os templates reais que uso (PRD, roadmap, sprint plan etc.) em uma próxima leva — por ora, cada skill já carrega a estrutura do entregável dentro do próprio `SKILL.md`, então dá pra usar sem esperar os templates chegarem.
+**`templates/` tem um template por skill** (PRD, roadmap, plano de sprint, desenho de experimento etc.), todos no mesmo formato de preenchimento: `[placeholder]`, instrução curta em itálico e a etiqueta de proveniência já visível onde ela importa. Usar não é obrigatório — cada skill carrega a estrutura do entregável dentro do próprio `SKILL.md`, e o template só evita reescrever o esqueleto do zero. O índice de qual template serve qual skill está em [`templates/README.md`](templates/README.md).
 
 ## Como usar
 
