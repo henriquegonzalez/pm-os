@@ -9,22 +9,27 @@ description: Estrutura a análise de métricas de produto — tendências, desem
 
 Reviews recorrentes de métricas, investigação de uma queda ou alta inesperada, ou quando um número solto precisa virar recomendação.
 
-## O princípio que guia esta skill
+## O caso que molda esta skill
 
-Já medi o efeito de uma mudança em um fluxo de upgrade em três janelas de tempo diferentes, antes e depois. O resultado não foi limpo: a taxa de conclusão subiu, o retorno no mesmo dia caiu, mas o abandono geral no fluxo continuou praticamente igual. Apresentei os três números juntos, sem esconder o que não tinha melhorado. Um review de métricas que só mostra o que "deu certo" não é análise, é curadoria de boa notícia — e quem toma decisão em cima disso decide errado. Esta skill existe para produzir o outro tipo de review.
+Medi o efeito de adicionar fricção deliberada — uma etapa de confirmação — num fluxo de upgrade de cartão. Desenhei a medição antes/depois em **três janelas de tempo**, especificamente para separar sazonalidade do efeito real da mudança: uma janela só teria me dado um número, não uma resposta. E acompanhei não só a conversão, mas quanto tempo quem desistia levava para tentar de novo — parte que não estava no desenho original e entrou porque eu suspeitava que fricção pudesse empurrar gente para fora, não só filtrar quem não queria de verdade.
 
-## Regra de proveniência
-
-Todo número no review carrega uma etiqueta: `medido` · `meta` · `estimativa` · `a confirmar`. Se a métrica vem de uma ferramenta conectada, é `medido`. Se vem de meta definida antes do período, é `meta`. Se é projeção, `estimativa`. Se a fonte não está clara ainda, `a confirmar` — e isso não impede o review de sair, só impede que alguém trate aquele número como fato.
+O resultado veio misto: a conversão do fluxo subiu **1,1 ponto percentual**, o retorno no mesmo dia de quem desistiu caiu **18 pontos percentuais**, e o abandono geral do fluxo seguiu em torno de **89%**, praticamente inalterado — todos `medido`. Apresentei os três juntos, sem escolher qual mostrar. Um review que só mostra o que "deu certo" não é análise, é curadoria de boa notícia — e quem decide em cima disso decide errado. Esta skill existe para produzir o outro tipo de review.
 
 ## Como eu trabalho
 
 1. **Reunir os dados** — métrica atual, período de comparação, meta, e recorte por segmento quando existir. Se não houver ferramenta de analytics conectada, peço os números manualmente e pergunto por eventos de negócio recentes que possam explicar variação (lançamento, campanha, incidente).
 2. **Organizar em hierarquia** — uma métrica norte (a que resume saúde do produto), métricas de saúde de primeiro nível (aquisição, ativação, engajamento, retenção, monetização, satisfação) e métricas diagnósticas de segundo nível por baixo de cada uma.
 3. **Analisar tendência, não só ponto** — valor atual, direção da mudança, variação contra meta, se está acelerando ou desacelerando, e se a mudança é sustentada ao longo de mais de uma janela de medição (não só o último dia).
-4. **Gerar o review** (estrutura abaixo).
+4. **Checar a métrica que não era a esperada.** Toda mudança tem um efeito colateral plausível; se ninguém mediu, o review diz isso em vez de concluir sem ele.
+5. **Gerar o review** (estrutura abaixo).
+
+## Regra de proveniência dos números
+
+Todo número no review carrega uma etiqueta: `medido` · `meta` · `estimativa` · `a confirmar`. Se a métrica vem de uma ferramenta conectada, é `medido`. Se vem de meta definida antes do período, é `meta`. Se é projeção, `estimativa`. Se a fonte não está clara ainda, `a confirmar` — e isso não impede o review de sair, só impede que alguém trate aquele número como fato.
 
 ## Estrutura do review
+
+> Template pronto para preencher: [`templates/metrics-review-template.md`](../../templates/metrics-review-template.md)
 
 - **Resumo** — 2-3 frases: saúde geral, mudança mais notável, o alerta principal (se houver).
 - **Placar de métricas** — tabela com valor atual, período anterior, variação percentual, meta e status.
@@ -38,10 +43,12 @@ Todo número no review carrega uma etiqueta: `medido` · `meta` · `estimativa` 
 ## Erros comuns que evito
 
 - Mostrar só a métrica que melhorou quando o experimento teve efeito misto.
+- Ler uma única janela de medição e chamar de efeito o que pode ser sazonalidade.
 - Tratar estimativa como se fosse medição.
 - Comparar períodos com metodologia de medição diferente sem avisar.
+- Declarar vitória quando a métrica principal não se moveu e só as secundárias mexeram.
 - "Continuar monitorando" como única ação recomendada.
 
 ## Follow-up
 
-Depois do review, ofereço: investigação mais profunda de uma métrica específica, especificação de dashboard, ou proposta de experimento para testar a hipótese de causa levantada.
+Depois do review, ofereço: investigação mais profunda de uma métrica específica, especificação de dashboard, proposta de experimento para testar a hipótese de causa levantada, ou a versão do resultado adaptada por audiência (ver `stakeholder-update`) — especialmente quando o resultado foi misto.
